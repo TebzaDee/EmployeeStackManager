@@ -1,0 +1,85 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package ac.emp.tut;
+
+import java.util.Scanner;
+import stackdiy.StackDIY;
+import tut.empl.ac.Employees;
+
+/**
+ *
+ * @author IC
+ */
+public class EmployerApp 
+{
+    public static void main(String [] args)
+    {
+        StackDIY st=new StackDIY();
+        Scanner kb=new Scanner(System.in);
+        
+        int option=0;
+        
+        do
+        {
+            System.out.print("Enter the option you wanna use \n" +
+                             "================================================================================================\n" + 
+                             "1 - Add employees to a list :\n" + 
+                             "2 - Display all the employees.\n" +
+                             "3 - Search for a specific employee using an ID number.\n"+
+                             "4 - Remove an employee from the list\n" + 
+                             "5 - Retrench a certain number of employees using the LIFO principle.\n" + 
+                             "6 - Retrench all the employees by clearing the list\n" +
+                             "7 -  Exit\n" );
+
+            option=kb.nextInt();
+            
+            switch(option)
+            {
+                case 1: 
+                    st.AddEmployee();
+                    System.out.println("Enter any key to continue");
+                    option=kb.nextInt();
+                break;   
+                
+                case 2: 
+                    st.DisplayEmployees();
+                    System.out.println("Enter any key to continue");
+                    option=kb.nextInt();
+                break;
+                
+                case 3:
+                    st.Search("27484616");
+                    System.out.println("Enter any key to continue");
+                    option=kb.nextInt();
+                break;
+                
+                case 4:
+                    st.Remove("27484616");
+                    System.out.println("Enter any key to continue");
+                    option=kb.nextInt();
+                break;        
+                
+                case 5:
+                    st.Retench(2);
+                    System.out.println("Enter any key to continue");
+                    option=kb.nextInt();
+                break;
+                
+                case 6:
+                    st.RetenchAll();
+                    System.out.println("Enter any key to continue");
+                    option=kb.nextInt();
+                break;
+                
+                case 7:
+                    System.out.println("==============================Thank you=======================================================\n");
+                    
+                break;
+            }
+            
+        }while(option!=7);
+    }
+            
+}
